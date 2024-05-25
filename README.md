@@ -34,4 +34,19 @@ This will work on a small-scale situation where IP overlapping is not likely, bu
 
 Conclusion: not to be pursued unless no other way
 
+# Approach 2: Device information
+
+![alt text](image.png)
+
+This is a screenshot from Fing, a network scanning application.
+
+It shows that the Raspberry Pi, once connected to wifi, can be scanned for hostname & details (manufacturer name).
+
+If we accept that network info (hostname & ip) are unreliable for the application, perhaps these details can be of use.
+
+After digging into python socket library, there's something called "alias" that can be attached to a Raspberry Pi config.
+
+Refer to the approach-2/device-scan.py file for more details
+
+Currently seems promising, but scanning process takes a long time (the more devices on network, the longers)
 
