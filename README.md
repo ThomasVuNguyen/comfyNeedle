@@ -50,3 +50,25 @@ Refer to the approach-2/device-scan.py file for more details
 
 Currently seems promising, but scanning process takes a long time (the more devices on network, the longers)
 
+Conclusion: This is not standardized, not easy to implement in Flutter without Native Codes. Moreover, scanning for IP addresses & reading into the details takes a long time (~7s) -> not viable
+
+# Approach 3: The classic, just improved
+
+Currently, SSH identification is done using both hostname & IP address
+
+- Establishing initial OS image:
+    
+    Add wifi (priority 1) & hotspot (priority 2) information 
+- When host info is added: 
+    
+    <code>Map{String, String} id = {} in format {SSID, ip_addr}</code>
+
+    <code>hostname = given_hostname; ip[current_SSID] = get_ip_addr(given_hostname) </code>
+
+    Then, finish adding project!
+
+- When opening project:
+
+    <code>SSH.establish(ip[current_SSID])
+    if (failed) SSH.establish(hostname) && (current_SSSID)=get_ip_addr(hostname)</code>
+
