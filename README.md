@@ -72,3 +72,4 @@ Currently, SSH identification is done using both hostname & IP address
     <code>SSH.establish(ip[current_SSID])
     if (failed) SSH.establish(hostname) && (current_SSSID)=get_ip_addr(hostname)</code>
 
+# Approach 4: Perhaps a transition to Raspberry Pi Pico W is a good idea?
